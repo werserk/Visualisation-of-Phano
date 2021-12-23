@@ -1,5 +1,4 @@
 import sys
-import sys
 from PyQt5.QtWidgets import QApplication, QMainWindow
 from main_ui import Ui_MainWindow
 
@@ -10,7 +9,12 @@ class MyWidget(QMainWindow, Ui_MainWindow):
         super().__init__()
         # Вызываем метод для загрузки интерфейса из класса Ui_MainWindow,
         # остальное без изменений
+        self.tree = []
         self.setupUi(self)
+        self.btnAddCode.clicked.connect(self.addCode)
+
+    def addCode(self):
+        self.tree.append(self.editCode.text())
 
 
 if __name__ == '__main__':
