@@ -9,6 +9,7 @@
 
 
 from PyQt5 import QtCore, QtGui, QtWidgets
+from exclusive_widgets import Canvas
 
 
 class Ui_MainWindow(object):
@@ -101,16 +102,16 @@ class Ui_MainWindow(object):
         self.line.setFrameShadow(QtWidgets.QFrame.Sunken)
         self.line.setObjectName("line")
         self.verticalLayout_2.addWidget(self.line)
-        self.Canvas = QtWidgets.QWidget(self.centralwidget)
+        self.canvas = Canvas(self.centralwidget)
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Expanding)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
-        sizePolicy.setHeightForWidth(self.Canvas.sizePolicy().hasHeightForWidth())
-        self.Canvas.setSizePolicy(sizePolicy)
-        self.Canvas.setMinimumSize(QtCore.QSize(0, 200))
-        self.Canvas.setContextMenuPolicy(QtCore.Qt.NoContextMenu)
-        self.Canvas.setObjectName("Canvas")
-        self.verticalLayout_2.addWidget(self.Canvas)
+        sizePolicy.setHeightForWidth(self.canvas.sizePolicy().hasHeightForWidth())
+        self.canvas.setSizePolicy(sizePolicy)
+        self.canvas.setMinimumSize(QtCore.QSize(0, 200))
+        self.canvas.setContextMenuPolicy(QtCore.Qt.NoContextMenu)
+        self.canvas.setObjectName("canvas")
+        self.verticalLayout_2.addWidget(self.canvas)
         MainWindow.setCentralWidget(self.centralwidget)
         self.statusbar = QtWidgets.QStatusBar(MainWindow)
         self.statusbar.setObjectName("statusbar")
