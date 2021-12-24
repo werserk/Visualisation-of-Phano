@@ -22,6 +22,8 @@ class Canvas(QtWidgets.QWidget):
         center_y = max(self.height() // 10 - root_text.height(), root_text.height())
         qp.drawText(center_x - root_text.width() // 2, center_y, self.text)
 
+        y_step = len(max(self.letters, key=lambda x: len(x[0]))[0]) + 1
+        self.letters = sorted(self.letters, )
         for i, (code, letter) in enumerate(self.letters):
             text = QtGui.QFontMetricsF(self.font).boundingRect(letter)
             _code = ''
@@ -30,7 +32,7 @@ class Canvas(QtWidgets.QWidget):
             while len(_code) < len(code):
                 _code += code[len(_code)]
                 step = len(_code) + 1
-                y = y1 + 40
+                y = y1 + self.height() // y_step
                 x = x1
                 if int(_code[-1]) == 1:
                     x += self.width() // (2 ** step)
