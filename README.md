@@ -1,4 +1,4 @@
-# Visualisation_of_Phano
+# Visualisation-of-Phano
 ## Overview
 Этот проект нацелен на помощь в понимании и решении задач ЕГЭ связанных с условием Фано.
 
